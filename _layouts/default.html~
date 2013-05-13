@@ -14,14 +14,14 @@
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
     </head>
     <body>
-        <div class="navbar navbar-fixed-top">
+        <div class="navbar navbar-fixed-top franchise">
             <div class="navbar-inner">
-                <a class="brand" href="/">Maxerio</a>
+                <a class="brand franchise" href="/">Maxerio</a>
                 <ul class="nav">
-                    <li class="{% if page.url == "/index.html" %}active{% endif %}">
+                    <li class="{% if page.url == "/index.html" %}active{% endif %} franchise">
                         <a href="/">Home</a>
                     </li>
-                    <li class="{% if page.url == "/categories.html" %}active{% endif %}">
+                    <li class="{% if page.url == "/categories.html" %}active{% endif %} franchise">
                         <a href="/categories.html">Categories</a>
                     </li>
                 </ul>

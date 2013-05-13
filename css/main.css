@@ -20,3 +20,11 @@
      -moz-box-shadow: none;
           box-shadow: none;
 }
+
+@font-face {
+		font-family: 'Franchise';
+		src: url('../font/Franchise-Bold.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+.franchise { 'Franchise', Arial, sans-serif;}
