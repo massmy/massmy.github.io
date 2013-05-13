@@ -1,5 +1,5 @@
 .navbar-inner  {
-  background-color: #1b1b1b
+  background-color: #222222;
   background-image: none;
   background-repeat: none;
   border-color: #ffffff;
