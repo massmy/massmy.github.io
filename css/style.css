@@ -8,7 +8,7 @@
 .franchise { 'Franchise', Arial, sans-serif;}
 body {
     font-family: "Franchise" !important;
-    font-size: 13px;
+    font-size: 17px;
     background-image: url('/img/bg.png');
 }
 .post {
