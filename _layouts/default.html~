@@ -10,7 +10,8 @@
         <link rel="stylesheet" type="text/css" href="/css/prettify.css" />
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="/css/font-awesome.css" />
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css"
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
     </head>
     <body>
         <div class="navbar navbar-fixed-top">
