@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% if page.title %}{{ page.title }} - {% endif %}{{site.name}}
+        </title>
+        {% if page.tags %}
+            <meta name="keywords" content="{% for tag in page.tags %}{{tag}}{% unless forloop.last %},{% endunless %}{% endfor %}" />
+        {% endif %}
+        <link rel="stylesheet" type="text/css" href="/css/prettify.css" />
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="/css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <a class="brand" href="/">Maxerio</a>
+                <ul class="nav">
+                    <li class="{% if page.url == "/index.html" %}active{% endif %}">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="{% if page.url == "/categories.html" %}active{% endif %}">
+                        <a href="/categories.html">Categories</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <div class="well" id="sidebar">
+                        <i class="icon-github"></i> <a href="https://github.com/Maxerio">GitHub</a><br />
+                        <i class="icon-rss"></i> <a href="/rss.xml">RSS</a>
+                        {% for category in site.categories %}
+                            {% if forloop.first %}
+                                <hr>
+                                <p>Categories</p>
+                            {% endif %}
+                            <a href="/categories.html#{{category[0]}}">{{category[0]}}</a> ({{category[1] | size}})<br />
+                        {% endfor %}
+                        {% if site.related_posts %}
+                            <hr>
+                            <p>Related posts:</p>
+                            {% for post in site.related_posts %}
+                                {{post.date | date: "%d.%m.%Y"}} - <a href="{{post.url}}">{{post.title}}</a><br />
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="span9" id="content">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/jquery-1.8.2.js"></script>
+        <script type="text/javascript" src="/js/prettify.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
+    </body>
+</html>
