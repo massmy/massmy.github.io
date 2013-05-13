@@ -1,11 +1,14 @@
 ---
 layout: default
 ---
-{% for post in site.posts %}
-{% if post.category != 'project'%}
-    <div class="well post">
-        <a href="{{post.url}}"><h3>{{post.title}}</h3></a>
-        {{post.content}}
-    </div>
+{% for category in site.categories %}
+{% if category[0] != 'project' %}
+
+        {% for post in category[1] %}
+            <div class="well post">
+        	<a href="{{post.url}}"><h3>{{post.title}}</h3></a>
+        	{{post.content}}
+    		</div>
+        {% endfor %}
 {% endif %}
 {% endfor %}
