@@ -33,3 +33,7 @@ pre.prettyprint {
     border: 1px solid #CCC;
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
+.project
+{
+	background-image: url('/img/edge.png');
+}

@@ -7,9 +7,8 @@ layout: default
 
            {% for post in category[1] %}
 		<div class="span3">
-            <div class="well post">
-        	<a href="{{post.url}}"><h3>{{post.title}}</h3></a>
-        	{{post.content}}
+            <div class="well post project">
+        	<h3>{{post.content}}</h3>
     		</div>
 		</div>
         {% endfor %}
