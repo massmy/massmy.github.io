@@ -66,7 +66,7 @@ if (
     typeof DeviceMotionEvent === 'undefined' ||
     typeof DeviceMotionEvent.requestPermission !== 'function'
   ){
-    document.getElementById('motion-btn').style.display = 'none';
+    // document.getElementById('motion-btn').style.display = 'none';
 }else{
     requestMotionPermission();
 }
