@@ -40,7 +40,57 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
+let useGyro = false;
+
+function requestMotionPermission() {
+  if (
+    typeof DeviceMotionEvent !== 'undefined' &&
+    typeof DeviceMotionEvent.requestPermission === 'function'
+  ) {
+    DeviceMotionEvent.requestPermission()
+      .then((response) => {
+        if (response === 'granted') {
+          startGyro();
+          document.getElementById('motion-btn').style.display = 'none';
+        }
+      })
+      .catch(console.error);
+  } else {
+    // Android / Desktop fallback
+    startGyro();
+    document.getElementById('motion-btn').style.display = 'none';
+  }
+}
+
+if (
+    typeof DeviceMotionEvent === 'undefined' ||
+    typeof DeviceMotionEvent.requestPermission !== 'function'
+  ){
+    document.getElementById('motion-btn').style.display = 'none';
+}
+
+function startGyro() {
+  useGyro = true;
+  window.addEventListener('deviceorientation', (event) => {
+    if (event.beta !== null && event.gamma !== null) {
+      mouseX = window.innerWidth / 2 + event.gamma * 10;
+      mouseY = window.innerHeight / 2 + event.beta * 10;
+    }
+  });
+}
+
+// Fallback for desktop
 document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
+  if (!useGyro) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }
+});
+
+// --- Mousemove for desktop ---
+document.addEventListener('mousemove', (e) => {
+  if (!useGyro) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }
 });
