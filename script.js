@@ -76,8 +76,8 @@ function startGyro() {
   useGyro = true;
   window.addEventListener('deviceorientation', (event) => {
     if (event.beta !== null && event.gamma !== null) {
-      mouseX = window.innerWidth / 2 + event.gamma * 30;
-      mouseY = window.innerHeight / 2 + event.beta * 30;
+      mouseX = (window.innerWidth / 2) + event.gamma * 30;
+      mouseY = (window.innerHeight / 2) - event.beta * 30;
     }
   });
 }
