@@ -1,13 +1,18 @@
----
-layout: default
----
-{% for category in site.categories %}
-{% if category[0] != 'project' %}
-{% for post in category[1] %}
-            <div class="well post">
-        	<a href="{{post.url}}"><h3>{{post.title}}</h3></a>
-        	{{post.content}}
-    		</div>
-        {% endfor %}
-{% endif %}
-{% endfor %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mein Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="star-canvas"></canvas>
+  <div class="content">
+    <h1>Welcome</h1>
+    <p>Hello, I'm Maximilian Assmy. I'm a software developer.</p>
+    <a href="https://www.linkedin.com/in/maximilian-assmy-331b11320/" target="_blank" class="linkedin-button">LinkedIn</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
